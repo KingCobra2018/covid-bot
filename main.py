@@ -1,12 +1,7 @@
 import discord
 from discord.ext import commands
 from random import randint
-from dotenv import load_dotenv
 import os
-
-# .ENV usage.json
-load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Set bot prefix
 client = commands.Bot(command_prefix='+')
@@ -27,4 +22,4 @@ for filename in os.listdir('cogs'):
         client.load_extension(f'cogs.{filename[: -3]}')
 
 # Token Setup
-client.run(BOT_TOKEN)
+client.run('TOKEN HERE')
